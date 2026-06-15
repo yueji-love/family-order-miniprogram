@@ -1,10 +1,10 @@
 <view class="menu-page">
   <view class="menu-header">
-    <view>
-      <view class="eyebrow">共享点菜</view>
-      <view class="menu-title">这顿想吃什么</view>
-    </view>
-    <view class="menu-count">{{cartCount}} 道</view>
+      <view>
+        <view class="eyebrow">共享点菜</view>
+        <view class="menu-title">这顿想吃什么</view>
+      </view>
+    <view class="menu-count">{{cartCount}}道</view>
   </view>
 
   <scroll-view class="category-row" scroll-x>
