@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/family/family",
+    "pages/menu/menu",
+    "pages/cart/cart",
+    "pages/meal/meal",
+    "pages/purchase/purchase",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "今天吃什么",
+    "navigationBarBackgroundColor": "#f7f3ea",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f3ea"
+  },
+  "tabBar": {
+    "color": "#6f6a60",
+    "selectedColor": "#2f6f5e",
+    "backgroundColor": "#fffdf8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "点菜"
+      },
+      {
+        "pagePath": "pages/meal/meal",
+        "text": "餐单"
+      },
+      {
+        "pagePath": "pages/purchase/purchase",
+        "text": "采购"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

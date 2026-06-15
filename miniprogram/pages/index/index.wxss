@@ -1,0 +1,4 @@
+.panel view:first-child {
+  font-size: 30rpx;
+  font-weight: 600;
+}

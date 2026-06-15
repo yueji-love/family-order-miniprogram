@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72rpx;
+  font-size: 28rpx;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.stepper button {
+  width: 56rpx;
+  height: 56rpx;
+  padding: 0;
+  line-height: 56rpx;
+}

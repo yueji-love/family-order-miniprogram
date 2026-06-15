@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="title">家庭</view>
+  <view class="subtitle">{{roleHint}}</view>
+
+  <view class="section panel">
+    <view class="field-label">创建家庭</view>
+    <input value="{{familyName}}" bindinput="onFamilyNameInput" placeholder="输入家庭名称" />
+    <button class="button section" bindtap="createFamily">我是主理人，创建家庭</button>
+  </view>
+
+  <view class="section panel">
+    <view class="field-label">加入家庭</view>
+    <input value="{{inviteCode}}" bindinput="onInviteCodeInput" placeholder="输入邀请码" />
+    <button class="button secondary section" bindtap="joinFamily">我是成员，加入家庭</button>
+  </view>
+</view>

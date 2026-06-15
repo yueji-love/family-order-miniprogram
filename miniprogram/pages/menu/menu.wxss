@@ -1,0 +1,99 @@
+.menu-page {
+  display: flex;
+  min-height: 100vh;
+  padding-bottom: 120rpx;
+  background: #f7f3ea;
+}
+
+.sidebar {
+  width: 176rpx;
+  background: #eee5d4;
+}
+
+.category {
+  padding: 30rpx 18rpx;
+  color: #625b50;
+  font-size: 28rpx;
+}
+
+.category.active {
+  background: #fffdf8;
+  color: #2f6f5e;
+  font-weight: 700;
+}
+
+.dish-list {
+  flex: 1;
+  padding: 24rpx;
+}
+
+.dish {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  margin-bottom: 22rpx;
+  padding: 20rpx;
+  border: 1rpx solid #ece3d3;
+  border-radius: 8rpx;
+  background: #fffdf8;
+}
+
+.dish-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 8rpx;
+  background: #dbe9df;
+  color: #2f6f5e;
+  font-size: 44rpx;
+  font-weight: 700;
+}
+
+.dish-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dish-name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.dish-tag,
+.dish-status {
+  margin-top: 8rpx;
+  color: #716a5e;
+  font-size: 24rpx;
+}
+
+.dish-status.disabled {
+  color: #a65f42;
+}
+
+.add-btn {
+  width: 64rpx;
+  height: 64rpx;
+  padding: 0;
+  border-radius: 50%;
+  background: #2f6f5e;
+  color: #fff;
+  line-height: 64rpx;
+}
+
+.cart-bar {
+  position: fixed;
+  right: 24rpx;
+  bottom: 28rpx;
+  left: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88rpx;
+  padding: 0 32rpx;
+  border-radius: 8rpx;
+  background: #27231d;
+  color: #fff;
+  font-size: 28rpx;
+}

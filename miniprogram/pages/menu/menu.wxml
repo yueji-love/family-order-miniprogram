@@ -1,0 +1,28 @@
+<view class="menu-page">
+  <view class="sidebar">
+    <view
+      wx:for="{{categories}}"
+      wx:key="*this"
+      class="category {{currentCategory === item ? 'active' : ''}}"
+      data-name="{{item}}"
+      bindtap="selectCategory"
+    >{{item}}</view>
+  </view>
+
+  <view class="dish-list">
+    <view class="dish" wx:for="{{dishes}}" wx:key="id">
+      <view class="dish-image">{{item.initial}}</view>
+      <view class="dish-info">
+        <view class="dish-name">{{item.name}}</view>
+        <view class="dish-tag">{{item.tag}} · 已点 {{item.count}} 次</view>
+        <view class="dish-status {{item.status !== '上架' ? 'disabled' : ''}}">{{item.status}}</view>
+      </view>
+      <button class="add-btn" data-status="{{item.status}}" bindtap="addDish">+</button>
+    </view>
+  </view>
+
+  <view class="cart-bar" bindtap="goCart">
+    <view>购物车</view>
+    <view>{{cartCount}} 道菜</view>
+  </view>
+</view>

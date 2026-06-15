@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="title">今天吃什么</view>
+  <view class="subtitle">{{message}}</view>
+
+  <view class="section panel">
+    <view>当前状态</view>
+    <view class="subtitle" wx:if="{{loading}}">正在连接微信云开发...</view>
+    <view class="subtitle" wx:elif="{{user}}">已识别当前微信用户，可以继续创建或加入家庭。</view>
+    <view class="subtitle" wx:else>还没有完成登录验证，请稍后重试。</view>
+  </view>
+
+  <view class="section">
+    <button class="button" bindtap="goFamily">创建或加入家庭</button>
+  </view>
+
+  <view class="section">
+    <button class="button secondary" bindtap="goMenu">先看点菜页骨架</button>
+  </view>
+</view>

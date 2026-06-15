@@ -1,0 +1,18 @@
+.group-title {
+  margin-bottom: 12rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.purchase-row {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  padding: 16rpx 0;
+  border-top: 1rpx solid #eee5d4;
+}
+
+.purchase-info {
+  flex: 1;
+  font-size: 28rpx;
+}

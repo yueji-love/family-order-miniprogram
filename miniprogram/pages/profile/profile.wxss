@@ -1,0 +1,10 @@
+.tip {
+  padding: 16rpx 0;
+  border-top: 1rpx solid #eee5d4;
+  color: #5f594f;
+  font-size: 28rpx;
+}
+
+.tip:first-child {
+  border-top: 0;
+}
