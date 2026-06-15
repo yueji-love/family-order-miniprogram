@@ -1,9 +1,40 @@
+.cart-hero {
+  padding: 36rpx 28rpx;
+  border-radius: 8rpx;
+  background: #fffefa;
+  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+}
+
+.form-panel {
+  padding: 8rpx 28rpx;
+  border-radius: 8rpx;
+  background: #fffefa;
+  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+}
+
 .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72rpx;
+  min-height: 116rpx;
+  border-top: 1rpx solid #eef1e9;
   font-size: 28rpx;
+}
+
+.row:first-child {
+  border-top: 0;
+}
+
+.label {
+  color: #687067;
+  font-size: 24rpx;
+}
+
+.value {
+  margin-top: 8rpx;
+  color: #20241f;
+  font-size: 32rpx;
+  font-weight: 700;
 }
 
 .stepper {
@@ -16,5 +47,15 @@
   width: 56rpx;
   height: 56rpx;
   padding: 0;
+  border-radius: 8rpx;
+  background: rgba(36, 107, 90, 0.08);
+  color: #246b5a;
   line-height: 56rpx;
+}
+
+.submit-area {
+  position: fixed;
+  right: 28rpx;
+  bottom: 42rpx;
+  left: 28rpx;
 }

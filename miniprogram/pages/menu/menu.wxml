@@ -1,4 +1,12 @@
 <view class="menu-page">
+  <view class="menu-header">
+    <view>
+      <view class="eyebrow">共享点菜</view>
+      <view class="menu-title">这顿想吃什么</view>
+    </view>
+    <view class="menu-count">{{cartCount}} 道</view>
+  </view>
+
   <view class="sidebar">
     <view
       wx:for="{{categories}}"
@@ -9,7 +17,7 @@
     >{{item}}</view>
   </view>
 
-  <view class="dish-list">
+  <scroll-view class="dish-list" scroll-y>
     <view class="dish" wx:for="{{dishes}}" wx:key="id">
       <view class="dish-image">{{item.initial}}</view>
       <view class="dish-info">
@@ -19,10 +27,13 @@
       </view>
       <button class="add-btn" data-status="{{item.status}}" bindtap="addDish">+</button>
     </view>
-  </view>
+  </scroll-view>
 
   <view class="cart-bar" bindtap="goCart">
-    <view>购物车</view>
-    <view>{{cartCount}} 道菜</view>
+    <view>
+      <view class="cart-title">购物车</view>
+      <view class="cart-sub">确认后提交到共享餐单</view>
+    </view>
+    <view class="cart-total">{{cartCount}} 道菜</view>
   </view>
 </view>

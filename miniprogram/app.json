@@ -10,9 +10,9 @@
   ],
   "window": {
     "navigationBarTitleText": "今天吃什么",
-    "navigationBarBackgroundColor": "#f7f3ea",
+    "navigationBarBackgroundColor": "#f6f7f1",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f7f3ea"
+    "backgroundColor": "#f6f7f1"
   },
   "tabBar": {
     "color": "#6f6a60",

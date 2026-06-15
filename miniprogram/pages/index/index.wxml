@@ -1,19 +1,37 @@
 <view class="page">
-  <view class="title">今天吃什么</view>
-  <view class="subtitle">{{message}}</view>
+  <view class="hero">
+    <view class="eyebrow">家庭点餐小程序</view>
+    <view class="title">今天吃什么</view>
+    <view class="subtitle">{{message}}</view>
 
-  <view class="section panel">
-    <view>当前状态</view>
-    <view class="subtitle" wx:if="{{loading}}">正在连接微信云开发...</view>
-    <view class="subtitle" wx:elif="{{user}}">已识别当前微信用户，可以继续创建或加入家庭。</view>
-    <view class="subtitle" wx:else>还没有完成登录验证，请稍后重试。</view>
+    <view class="meal-card">
+      <view>
+        <view class="meal-label">默认推荐</view>
+        <view class="meal-main">{{defaultMeal.mealDate}} {{defaultMeal.mealTypeName}}</view>
+      </view>
+      <view class="pill">可修改</view>
+    </view>
   </view>
 
-  <view class="section">
+  <view class="section status-panel">
+    <view class="status-dot"></view>
+    <view class="status-copy">
+      <view class="status-title">当前状态</view>
+      <view class="status-desc" wx:if="{{loading}}">正在连接微信云开发...</view>
+      <view class="status-desc" wx:elif="{{user}}">已识别当前微信用户，可以继续创建或加入家庭。</view>
+      <view class="status-desc" wx:else>还没有完成登录验证，请稍后重试。</view>
+    </view>
+  </view>
+
+  <view class="section action-grid">
+    <view class="action-card" wx:for="{{shortcuts}}" wx:key="title">
+      <view class="action-title">{{item.title}}</view>
+      <view class="action-desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <view class="bottom-actions">
     <button class="button" bindtap="goFamily">创建或加入家庭</button>
-  </view>
-
-  <view class="section">
-    <button class="button secondary" bindtap="goMenu">先看点菜页骨架</button>
+    <button class="button secondary" bindtap="goMenu">看看点菜页</button>
   </view>
 </view>

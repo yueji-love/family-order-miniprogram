@@ -1,11 +1,20 @@
+const { getDefaultMeal } = require('../../utils/meal-time');
+
 Page({
   data: {
     loading: false,
     user: null,
-    message: '先把家庭建起来，再开始一起点今天这顿饭。'
+    defaultMeal: null,
+    shortcuts: [
+      { title: '创建家庭', desc: '主理人先建一个家' },
+      { title: '一起点菜', desc: '成员共建同一餐' },
+      { title: '采购勾选', desc: '买到一项勾一项' }
+    ],
+    message: '把一家人的想吃、要买、已买齐，放进同一个清清楚楚的小流程里。'
   },
 
   onLoad() {
+    this.setData({ defaultMeal: getDefaultMeal() });
     this.login();
   },
 
