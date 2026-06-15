@@ -1,3 +1,17 @@
+.family-hero {
+  padding: 36rpx 28rpx;
+  border-radius: 8rpx;
+  background: #fffefa;
+  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+}
+
+.family-panel {
+  padding: 28rpx;
+  border-radius: 8rpx;
+  background: #fffefa;
+  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+}
+
 .field-label {
   margin-bottom: 16rpx;
   font-size: 30rpx;
@@ -12,4 +26,9 @@ input {
   border: 1rpx solid #e5dac8;
   border-radius: 8rpx;
   background: #fff;
+}
+
+.form-button {
+  width: 100%;
+  margin-top: 28rpx;
 }

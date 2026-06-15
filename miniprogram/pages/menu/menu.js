@@ -1,3 +1,5 @@
+const { setTabBar } = require('../../utils/tab-bar');
+
 Page({
   data: {
     categories: ['家常菜', '快手菜', '汤羹', '下午茶'],
@@ -8,6 +10,10 @@ Page({
       { id: 'demo-3', name: '红烧排骨', initial: '红', tag: '硬菜', count: 0, status: '暂不可做' }
     ],
     cartCount: 0
+  },
+
+  onShow() {
+    setTabBar(this, 1);
   },
 
   selectCategory(event) {

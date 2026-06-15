@@ -76,7 +76,7 @@
   line-height: 1.5;
 }
 
-.action-grid {
+.action-list {
   display: flex;
   gap: 16rpx;
 }
@@ -104,12 +104,9 @@
 }
 
 .bottom-actions {
-  position: fixed;
-  right: 28rpx;
-  bottom: 138rpx;
-  left: 28rpx;
   display: flex;
   gap: 18rpx;
+  padding-bottom: 150rpx;
 }
 
 .bottom-actions .button {

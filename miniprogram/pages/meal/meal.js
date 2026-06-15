@@ -1,3 +1,5 @@
+const { setTabBar } = require('../../utils/tab-bar');
+
 Page({
   data: {
     status: '草稿中',
@@ -5,5 +7,9 @@ Page({
       { name: '番茄炒蛋', addedByName: '悦悦' },
       { name: '青椒肉丝', addedByName: 'bo' }
     ]
+  },
+
+  onShow() {
+    setTabBar(this, 2);
   }
 });

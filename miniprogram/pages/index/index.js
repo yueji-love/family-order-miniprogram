@@ -1,4 +1,5 @@
 const { getDefaultMeal } = require('../../utils/meal-time');
+const { setTabBar } = require('../../utils/tab-bar');
 
 Page({
   data: {
@@ -16,6 +17,10 @@ Page({
   onLoad() {
     this.setData({ defaultMeal: getDefaultMeal() });
     this.login();
+  },
+
+  onShow() {
+    setTabBar(this, 0);
   },
 
   login() {

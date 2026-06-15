@@ -23,14 +23,14 @@
     </view>
   </view>
 
-  <view class="section action-grid">
+  <view class="section action-list">
     <view class="action-card" wx:for="{{shortcuts}}" wx:key="title">
       <view class="action-title">{{item.title}}</view>
       <view class="action-desc">{{item.desc}}</view>
     </view>
   </view>
 
-  <view class="bottom-actions">
+  <view class="section bottom-actions">
     <button class="button" bindtap="goFamily">创建或加入家庭</button>
     <button class="button secondary" bindtap="goMenu">看看点菜页</button>
   </view>

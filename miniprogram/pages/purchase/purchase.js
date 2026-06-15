@@ -1,3 +1,5 @@
+const { setTabBar } = require('../../utils/tab-bar');
+
 Page({
   data: {
     groups: [
@@ -15,5 +17,9 @@ Page({
         ]
       }
     ]
+  },
+
+  onShow() {
+    setTabBar(this, 3);
   }
 });

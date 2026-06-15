@@ -1,4 +1,5 @@
 const { getDefaultMeal } = require('../../utils/meal-time');
+const { setTabBar } = require('../../utils/tab-bar');
 
 Page({
   data: {
@@ -13,6 +14,10 @@ Page({
       mealDate: meal.mealDate,
       mealTypeName: meal.mealTypeName
     });
+  },
+
+  onShow() {
+    setTabBar(this, 1);
   },
 
   minusServing() {

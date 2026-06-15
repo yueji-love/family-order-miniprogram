@@ -1,6 +1,12 @@
+const { setTabBar } = require('../../utils/tab-bar');
+
 Page({
   data: {
     roleName: '未加入家庭',
     tips: ['创建家庭后你就是主理人', '通过邀请码加入后你就是成员', '成员看不到菜品食材配方']
+  },
+
+  onShow() {
+    setTabBar(this, 4);
   }
 });
