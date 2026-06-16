@@ -1,8 +1,8 @@
 <view class="cart-page">
   <view class="cart-hero">
     <view class="hero-kicker">提交前确认</view>
-    <view class="hero-title">购物车</view>
-    <view class="hero-desc">系统会根据当前时间，先帮你选好用餐日期和餐次。</view>
+    <view class="hero-title">确认这一餐</view>
+    <view class="hero-desc">先选菜，再在这里确认用餐日期、餐次和人数。</view>
   </view>
 
   <view class="form-panel">
@@ -11,14 +11,24 @@
         <view class="label">用餐日期</view>
         <view class="value">{{mealDate}}</view>
       </view>
+      <picker mode="date" value="{{mealDate}}" bindchange="onDateChange">
+        <view class="edit-pill">修改</view>
+      </picker>
     </view>
-    <view class="row">
-      <view>
-        <view class="label">餐次</view>
-        <view class="value">{{mealTypeName}}</view>
+
+    <view class="meal-section">
+      <view class="label">餐次</view>
+      <view class="meal-options">
+        <view
+          wx:for="{{mealTypes}}"
+          wx:key="key"
+          class="meal-option {{mealType === item.key ? 'active' : ''}}"
+          data-key="{{item.key}}"
+          bindtap="selectMealType"
+        >{{item.name}}</view>
       </view>
-      <view class="pill">自动推荐</view>
     </view>
+
     <view class="row">
       <view>
         <view class="label">就餐人数</view>

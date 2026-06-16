@@ -2,21 +2,26 @@
   min-height: 100vh;
   box-sizing: border-box;
   padding: 32rpx 28rpx 170rpx;
-  background: #f8f8fa;
+  background: #fffdf6;
+}
+
+button::after {
+  border: 0;
 }
 
 .cart-hero {
   box-sizing: border-box;
   padding: 34rpx 32rpx;
-  border-radius: 30rpx;
-  background: #111111;
+  border-radius: 32rpx;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff8a3d 100%);
   color: #ffffff;
+  box-shadow: 0 16rpx 34rpx rgba(255, 138, 61, 0.2);
 }
 
 .hero-kicker {
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 24rpx;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .hero-title {
@@ -27,7 +32,7 @@
 
 .hero-desc {
   margin-top: 16rpx;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 26rpx;
   line-height: 1.5;
 }
@@ -37,6 +42,7 @@
   padding: 8rpx 28rpx;
   border-radius: 28rpx;
   background: #ffffff;
+  box-shadow: 0 10rpx 28rpx rgba(189, 119, 54, 0.08);
 }
 
 .row {
@@ -44,7 +50,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 118rpx;
-  border-top: 1rpx solid #eeeeF2;
+  border-top: 1rpx solid #f2eadf;
 }
 
 .row:first-child {
@@ -52,33 +58,62 @@
 }
 
 .label {
-  color: #85858e;
+  color: #8f7d69;
   font-size: 24rpx;
+  font-weight: 800;
 }
 
 .value {
   margin-top: 8rpx;
-  color: #111111;
+  color: #2b2218;
   font-size: 32rpx;
   font-weight: 900;
 }
 
-.pill {
-  height: 46rpx;
-  padding: 0 16rpx;
+.edit-pill {
+  height: 48rpx;
+  padding: 0 18rpx;
   border-radius: 999rpx;
-  background: #f0edf7;
-  color: #8173b4;
-  font-size: 22rpx;
+  background: #fff2d5;
+  color: #d2742f;
+  font-size: 23rpx;
   font-weight: 900;
-  line-height: 46rpx;
+  line-height: 48rpx;
+}
+
+.meal-section {
+  padding: 26rpx 0;
+  border-top: 1rpx solid #f2eadf;
+}
+
+.meal-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  margin-top: 18rpx;
+}
+
+.meal-option {
+  height: 60rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  background: #fff4e6;
+  color: #8f7d69;
+  font-size: 25rpx;
+  font-weight: 900;
+  line-height: 60rpx;
+}
+
+.meal-option.active {
+  background: #ff8a3d;
+  color: #ffffff;
 }
 
 .stepper {
   display: flex;
   align-items: center;
   gap: 18rpx;
-  color: #111111;
+  color: #2b2218;
   font-size: 30rpx;
   font-weight: 900;
 }
@@ -91,10 +126,11 @@
   height: 58rpx;
   padding: 0;
   border-radius: 50%;
-  background: #111111;
-  color: #ffffff;
+  background: #fff2d5;
+  color: #d2742f;
   font-size: 34rpx;
-  line-height: 58rpx;
+  font-weight: 900;
+  line-height: 56rpx;
 }
 
 .submit-area {
@@ -106,10 +142,11 @@
 
 .submit-button {
   height: 94rpx;
-  border-radius: 24rpx;
-  background: #111111;
+  border-radius: 26rpx;
+  background: #ff8a3d;
   color: #ffffff;
   font-size: 30rpx;
   font-weight: 900;
   line-height: 94rpx;
+  box-shadow: 0 14rpx 28rpx rgba(255, 138, 61, 0.22);
 }

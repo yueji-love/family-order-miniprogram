@@ -1,4 +1,3 @@
-const { getDefaultMeal } = require('../../utils/meal-time');
 const { setTabBar } = require('../../utils/tab-bar');
 
 const categories = [
@@ -38,25 +37,20 @@ Page({
     hasFamily: true,
     role: '主理人',
     roleId: 'CHEF-1001',
-    memberId: 'MEM-2048',
-    familyId: 'HOME-0616',
     familyName: '测试家庭',
-    defaultMeal: null,
     categories,
     currentCategory: categories[0],
     dishes,
     visibleDishes: [],
     cartCount: 0,
     cartItems: [],
-    cartPreview: '还没选菜',
-    submitText: '下单',
     searchKeyword: '',
     isSearching: false,
+    cartDrawerVisible: false,
     listTitle: `${categories[0]}(6)`
   },
 
   onLoad() {
-    this.setData({ defaultMeal: getDefaultMeal() });
     this.refreshVisibleDishes();
     this.login();
   },
@@ -103,12 +97,8 @@ Page({
   refreshCart(dishesNext) {
     const cartItems = dishesNext.filter((dish) => dish.selected > 0);
     const cartCount = cartItems.reduce((sum, dish) => sum + dish.selected, 0);
-    const cartPreview = cartItems.length
-      ? cartItems.slice(0, 2).map((dish) => `${dish.name}x${dish.selected}`).join('、')
-      : '还没选菜';
-    const submitText = cartCount === 0 ? '下单' : `下单 ${cartCount}`;
 
-    this.setData({ dishes: dishesNext, cartItems, cartCount, cartPreview, submitText }, () => {
+    this.setData({ dishes: dishesNext, cartItems, cartCount }, () => {
       this.refreshVisibleDishes();
     });
   },
@@ -144,6 +134,16 @@ Page({
     this.refreshCart(dishesNext);
   },
 
+  reduceDish(event) {
+    const id = event.currentTarget.dataset.id;
+    const dishesNext = this.data.dishes.map((dish) => {
+      if (dish.id !== id) return dish;
+      return { ...dish, selected: Math.max(dish.selected - 1, 0) };
+    });
+
+    this.refreshCart(dishesNext);
+  },
+
   randomDish() {
     const list = this.data.isSearching ? this.data.visibleDishes : this.data.dishes;
     if (!list.length) {
@@ -159,17 +159,25 @@ Page({
       success: (res) => {
         if (res.confirm) {
           this.addDish({ currentTarget: { dataset: { id: dish.id } } });
+          this.openCartDrawer();
         }
       }
     });
   },
 
-  copyId(event) {
-    const value = event.currentTarget.dataset.value;
-    wx.setClipboardData({ data: value });
+  openCartDrawer() {
+    this.setData({ cartDrawerVisible: true });
+  },
+
+  closeCartDrawer() {
+    this.setData({ cartDrawerVisible: false });
   },
 
   goCart() {
+    if (!this.data.cartCount) {
+      wx.showToast({ title: '先选一道菜', icon: 'none' });
+      return;
+    }
     wx.navigateTo({ url: '/pages/cart/cart' });
   },
 

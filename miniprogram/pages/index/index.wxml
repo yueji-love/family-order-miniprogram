@@ -1,7 +1,7 @@
 <view class="order-page">
   <view wx:if="{{!hasFamily}}" class="family-setup">
     <view class="setup-title">先有一个家，再开始点菜</view>
-    <view class="setup-desc">主理人创建家庭并邀请成员；成员加入后，首页会直接显示这一顿可点的菜单。</view>
+    <view class="setup-desc">主理人创建家庭并邀请成员；成员加入后，首页会直接显示可点的菜单。</view>
     <view class="setup-actions">
       <button class="setup-primary" bindtap="goFamily">创建或加入家庭</button>
       <button class="setup-secondary" bindtap="goFamily">输入邀请码</button>
@@ -24,17 +24,6 @@
           bindinput="onSearchInput"
         />
         <text wx:if="{{searchKeyword}}" class="clear-search" bindtap="clearSearch">×</text>
-      </view>
-    </view>
-
-    <view class="meal-strip">
-      <view>
-        <view class="family-name">{{familyName}}</view>
-        <view class="meal-name">{{defaultMeal.mealDate}} {{defaultMeal.mealTypeName}}</view>
-      </view>
-      <view class="id-stack">
-        <view class="role-pill">{{role}}</view>
-        <view class="id-pill" data-value="{{roleId}}" bindtap="copyId">ID {{roleId}}</view>
       </view>
     </view>
 
@@ -66,14 +55,42 @@
       </scroll-view>
     </view>
 
-    <view class="floating-cart">
-      <view class="cart-icon">车</view>
-      <view class="cart-preview" bindtap="goCart">
-        <view class="cart-title">购物车 {{cartCount}} 道</view>
-        <view class="cart-dishes">{{cartPreview}}</view>
+    <view class="mini-cart">
+      <view class="cart-icon" bindtap="openCartDrawer">
+        <text>车</text>
+        <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
       </view>
       <button class="random-btn" bindtap="randomDish">随机选菜</button>
-      <button class="submit-btn {{cartCount === 0 ? 'disabled' : ''}}" bindtap="goCart">{{submitText}}</button>
+      <button class="view-cart-btn" bindtap="openCartDrawer">查看已选</button>
+    </view>
+
+    <view wx:if="{{cartDrawerVisible}}" class="drawer-mask" bindtap="closeCartDrawer"></view>
+    <view class="cart-drawer {{cartDrawerVisible ? 'open' : ''}}">
+      <view class="drawer-handle"></view>
+      <view class="drawer-head">
+        <view>
+          <view class="drawer-title">购物车</view>
+          <view class="drawer-subtitle">{{cartCount}} 道已选菜</view>
+        </view>
+        <view class="drawer-close" bindtap="closeCartDrawer">×</view>
+      </view>
+
+      <view wx:if="{{cartItems.length === 0}}" class="drawer-empty">还没点菜，先加一道喜欢的。</view>
+      <view wx:else class="drawer-list">
+        <view class="drawer-row" wx:for="{{cartItems}}" wx:key="id">
+          <view class="drawer-dish">
+            <view class="drawer-name">{{item.name}}</view>
+            <view class="drawer-meta">{{item.category}}</view>
+          </view>
+          <view class="drawer-stepper">
+            <button data-id="{{item.id}}" bindtap="reduceDish">-</button>
+            <text>{{item.selected}}</text>
+            <button data-id="{{item.id}}" bindtap="addDish">+</button>
+          </view>
+        </view>
+      </view>
+
+      <button class="confirm-cart {{cartCount === 0 ? 'disabled' : ''}}" bindtap="goCart">去确认下单</button>
     </view>
   </view>
 </view>
