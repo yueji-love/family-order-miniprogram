@@ -1,13 +1,51 @@
-.status {
-  margin-bottom: 16rpx;
-  font-size: 30rpx;
-  font-weight: 700;
+.meal-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 34rpx 28rpx 170rpx;
+  background: #f8f8fa;
+}
+
+.page-title {
+  color: #111111;
+  font-size: 46rpx;
+  font-weight: 900;
+}
+
+.page-desc {
+  margin-top: 14rpx;
+  color: #77777f;
+  font-size: 27rpx;
+  line-height: 1.5;
+}
+
+.meal-card {
+  margin-top: 30rpx;
+  padding: 8rpx 28rpx 10rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+}
+
+.status-line {
+  padding: 24rpx 0;
+  color: #8173b4;
+  font-size: 28rpx;
+  font-weight: 900;
 }
 
 .dish-row {
   display: flex;
   justify-content: space-between;
-  padding: 18rpx 0;
-  border-top: 1rpx solid #eee5d4;
-  font-size: 28rpx;
+  padding: 24rpx 0;
+  border-top: 1rpx solid #eeeeF2;
+}
+
+.dish-name {
+  color: #111111;
+  font-size: 29rpx;
+  font-weight: 800;
+}
+
+.dish-owner {
+  color: #888891;
+  font-size: 26rpx;
 }

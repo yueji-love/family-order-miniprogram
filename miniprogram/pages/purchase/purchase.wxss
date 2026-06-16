@@ -1,18 +1,57 @@
+.purchase-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 34rpx 28rpx 170rpx;
+  background: #f8f8fa;
+}
+
+.page-title {
+  color: #111111;
+  font-size: 46rpx;
+  font-weight: 900;
+}
+
+.page-desc {
+  margin-top: 14rpx;
+  color: #77777f;
+  font-size: 27rpx;
+  line-height: 1.5;
+}
+
+.group-card {
+  margin-top: 26rpx;
+  padding: 26rpx 28rpx 10rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+}
+
 .group-title {
-  margin-bottom: 12rpx;
+  margin-bottom: 8rpx;
+  color: #111111;
   font-size: 30rpx;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .purchase-row {
   display: flex;
   align-items: center;
-  gap: 14rpx;
-  padding: 16rpx 0;
-  border-top: 1rpx solid #eee5d4;
+  gap: 18rpx;
+  padding: 22rpx 0;
+  border-top: 1rpx solid #eeeeF2;
 }
 
 .purchase-info {
   flex: 1;
+}
+
+.purchase-name {
+  color: #111111;
   font-size: 28rpx;
+  font-weight: 800;
+}
+
+.purchase-meta {
+  margin-top: 8rpx;
+  color: #8b8b94;
+  font-size: 24rpx;
 }

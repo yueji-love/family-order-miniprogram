@@ -16,17 +16,13 @@
   },
   "tabBar": {
     "custom": true,
-    "color": "#6f6a60",
-    "selectedColor": "#2f6f5e",
-    "backgroundColor": "#fffdf8",
+    "color": "#8b8b93",
+    "selectedColor": "#111111",
+    "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/menu/menu",
         "text": "点菜"
       },
       {
@@ -39,7 +35,7 @@
       },
       {
         "pagePath": "pages/profile/profile",
-        "text": "我的"
+        "text": "我"
       }
     ]
   },

@@ -1,8 +1,29 @@
-<view class="page">
-  <view class="title">我的</view>
-  <view class="subtitle">当前身份：{{roleName}}</view>
+<view class="profile-page">
+  <view class="profile-card">
+    <view class="profile-kicker">{{familyName}}</view>
+    <view class="profile-title">我的</view>
+    <view class="profile-role">当前身份：{{roleName}}</view>
+  </view>
 
-  <view class="section panel">
-    <view class="tip" wx:for="{{tips}}" wx:key="*this">{{item}}</view>
+  <view class="section-title">主理人管理</view>
+  <view class="manager-list">
+    <view
+      wx:for="{{managerActions}}"
+      wx:key="title"
+      class="manager-card"
+      data-index="{{index}}"
+      bindtap="goAction"
+    >
+      <view>
+        <view class="manager-title">{{item.title}}</view>
+        <view class="manager-desc">{{item.desc}}</view>
+      </view>
+      <view class="manager-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="section-title">权限说明</view>
+  <view class="tips-card">
+    <view class="tip" wx:for="{{memberTips}}" wx:key="*this">{{item}}</view>
   </view>
 </view>

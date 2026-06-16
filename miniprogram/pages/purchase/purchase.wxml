@@ -1,14 +1,14 @@
-<view class="page">
-  <view class="title">采购单</view>
-  <view class="subtitle">成员买到哪项就勾哪项，系统会记录谁买的和时间。</view>
+<view class="purchase-page">
+  <view class="page-title">采购单</view>
+  <view class="page-desc">谁买到哪一项就勾哪一项，后续会记录勾选人和时间。</view>
 
-  <view class="section panel" wx:for="{{groups}}" wx:key="name">
+  <view class="group-card" wx:for="{{groups}}" wx:key="name">
     <view class="group-title">{{item.name}}</view>
     <view class="purchase-row" wx:for="{{item.items}}" wx:for-item="purchase" wx:key="name">
       <checkbox checked="{{purchase.checked}}" />
       <view class="purchase-info">
-        <view>{{purchase.name}} {{purchase.amount}}{{purchase.unit}}</view>
-        <view class="muted" wx:if="{{purchase.checkedByName}}">{{purchase.checkedByName}} 已买</view>
+        <view class="purchase-name">{{purchase.name}} {{purchase.amount}}{{purchase.unit}}</view>
+        <view class="purchase-meta" wx:if="{{purchase.checkedByName}}">{{purchase.checkedByName}} 已买</view>
       </view>
     </view>
   </view>

@@ -1,39 +1,22 @@
-<view class="menu-page">
-  <view class="menu-header">
-      <view>
-        <view class="eyebrow">共享点菜</view>
-        <view class="menu-title">这顿想吃什么</view>
-      </view>
-    <view class="menu-count">{{cartCount}}道</view>
+<view class="manage-page">
+  <view class="manage-header">
+    <view>
+      <view class="manage-kicker">主理人</view>
+      <view class="manage-title">菜单管理</view>
+      <view class="manage-desc">菜品图片、食材用量和上架状态只在这里维护。</view>
+    </view>
+    <button class="add-button" bindtap="addRecipe">添加菜谱</button>
   </view>
 
   <scroll-view class="category-row" scroll-x>
-    <view
-      wx:for="{{categories}}"
-      wx:key="*this"
-      class="category {{currentCategory === item ? 'active' : ''}}"
-      data-name="{{item}}"
-      bindtap="selectCategory"
-    >{{item}}</view>
+    <view class="category-chip" wx:for="{{categories}}" wx:key="*this">{{item}}</view>
   </scroll-view>
 
-  <scroll-view class="dish-list" scroll-y>
-    <view class="dish" wx:for="{{dishes}}" wx:key="id">
-      <view class="dish-image">{{item.initial}}</view>
-      <view class="dish-info">
-        <view class="dish-name">{{item.name}}</view>
-        <view class="dish-tag">{{item.tag}} · 已点 {{item.count}} 次</view>
-        <view class="dish-status {{item.status !== '上架' ? 'disabled' : ''}}">{{item.status}}</view>
-      </view>
-      <button class="add-btn" data-status="{{item.status}}" bindtap="addDish">加入</button>
+  <view class="dish-card" wx:for="{{dishes}}" wx:key="id" bindtap="editDish">
+    <view class="dish-info">
+      <view class="dish-name">{{item.name}}</view>
+      <view class="dish-meta">{{item.category}} · 总点餐 {{item.sales}}</view>
     </view>
-  </scroll-view>
-
-  <view class="cart-bar" bindtap="goCart">
-    <view>
-      <view class="cart-title">购物车</view>
-      <view class="cart-sub">确认后提交到共享餐单</view>
-    </view>
-    <view class="cart-total">{{cartCount}} 道菜</view>
+    <view class="status {{item.status === '暂不可做' ? 'paused' : ''}}">{{item.status}}</view>
   </view>
 </view>

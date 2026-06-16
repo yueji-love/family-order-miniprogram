@@ -1,19 +1,19 @@
-<view class="page">
+<view class="family-page">
   <view class="family-hero">
-    <view class="eyebrow">家庭空间</view>
-    <view class="title">家庭</view>
-    <view class="subtitle">{{roleHint}}</view>
+    <view class="hero-kicker">家庭空间</view>
+    <view class="hero-title">创建或加入家庭</view>
+    <view class="hero-desc">{{roleHint}}</view>
   </view>
 
-  <view class="section family-panel">
+  <view class="family-panel">
     <view class="field-label">创建家庭</view>
     <input value="{{familyName}}" bindinput="onFamilyNameInput" placeholder="输入家庭名称" />
-    <button class="button form-button" bindtap="createFamily">主理人创建家庭</button>
+    <button class="primary-button" bindtap="createFamily">我是主理人，创建家庭</button>
   </view>
 
-  <view class="section family-panel">
+  <view class="family-panel">
     <view class="field-label">加入家庭</view>
     <input value="{{inviteCode}}" bindinput="onInviteCodeInput" placeholder="输入邀请码" />
-    <button class="button secondary form-button" bindtap="joinFamily">成员加入家庭</button>
+    <button class="secondary-button" bindtap="joinFamily">我是成员，加入家庭</button>
   </view>
 </view>

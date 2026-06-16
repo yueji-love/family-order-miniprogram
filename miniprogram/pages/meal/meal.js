@@ -4,12 +4,12 @@ Page({
   data: {
     status: '草稿中',
     dishes: [
-      { name: '番茄炒蛋', addedByName: '悦悦' },
-      { name: '青椒肉丝', addedByName: 'bo' }
+      { name: '蒜蓉娃娃菜', addedByName: '爸爸' },
+      { name: '清炒山药', addedByName: '孩子' }
     ]
   },
 
   onShow() {
-    setTabBar(this, 2);
+    setTabBar(this, 1);
   }
 });

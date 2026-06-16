@@ -6,8 +6,8 @@ Page({
       {
         name: '蔬菜区',
         items: [
-          { name: '番茄', amount: '4', unit: '个', checked: false },
-          { name: '小葱', amount: '1', unit: '把', checked: true, checkedByName: 'bo' }
+          { name: '娃娃菜', amount: '2', unit: '颗', checked: false },
+          { name: '小葱', amount: '1', unit: '把', checked: true, checkedByName: '妈妈' }
         ]
       },
       {
@@ -20,6 +20,6 @@ Page({
   },
 
   onShow() {
-    setTabBar(this, 3);
+    setTabBar(this, 2);
   }
 });

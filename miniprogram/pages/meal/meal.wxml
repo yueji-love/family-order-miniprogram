@@ -1,12 +1,12 @@
-<view class="page">
-  <view class="title">共享餐单</view>
-  <view class="subtitle">主理人确认前，成员看到的是同一份餐单草稿。</view>
+<view class="meal-page">
+  <view class="page-title">共享餐单</view>
+  <view class="page-desc">主理人确认前，成员看到的是同一份餐单草稿。</view>
 
-  <view class="section panel">
-    <view class="status">当前状态：{{status}}</view>
+  <view class="meal-card">
+    <view class="status-line">当前状态：{{status}}</view>
     <view class="dish-row" wx:for="{{dishes}}" wx:key="name">
-      <text>{{item.name}}</text>
-      <text class="muted">{{item.addedByName}} 点的</text>
+      <view class="dish-name">{{item.name}}</view>
+      <view class="dish-owner">{{item.addedByName}} 点的</view>
     </view>
   </view>
 </view>

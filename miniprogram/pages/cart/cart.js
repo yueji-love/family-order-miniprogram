@@ -17,7 +17,7 @@ Page({
   },
 
   onShow() {
-    setTabBar(this, 1);
+    setTabBar(this, 0);
   },
 
   minusServing() {
@@ -31,7 +31,7 @@ Page({
 
   submitCart() {
     wx.showToast({
-      title: '下一阶段接入餐单',
+      title: '下一阶段接入共享餐单',
       icon: 'none'
     });
   }

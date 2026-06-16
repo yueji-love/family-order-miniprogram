@@ -1,177 +1,117 @@
-.menu-page {
-  position: relative;
+.manage-page {
   min-height: 100vh;
   box-sizing: border-box;
-  padding-top: 172rpx;
-  padding-bottom: 220rpx;
-  background: #ffffff;
+  padding: 30rpx 28rpx 80rpx;
+  background: #f8f8fa;
 }
 
-.menu-header {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  left: 0;
+.manage-header {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 24rpx;
   box-sizing: border-box;
-  height: 172rpx;
-  padding: 34rpx 28rpx 24rpx;
+  padding: 32rpx;
+  border-radius: 30rpx;
   background: #ffffff;
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.04);
 }
 
-.menu-title {
-  margin-top: 8rpx;
+.manage-kicker {
+  color: #8173b4;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.manage-title {
+  margin-top: 10rpx;
+  color: #111111;
   font-size: 44rpx;
   font-weight: 900;
 }
 
-.menu-count {
-  min-width: 86rpx;
-  height: 54rpx;
+.manage-desc {
+  margin-top: 12rpx;
+  color: #7b7b84;
+  font-size: 25rpx;
+  line-height: 1.45;
+}
+
+.add-button {
+  flex-shrink: 0;
+  width: 150rpx;
+  height: 66rpx;
+  padding: 0;
   border-radius: 18rpx;
-  background: #171717;
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
   font-size: 24rpx;
   font-weight: 800;
-  line-height: 54rpx;
-  text-align: center;
+  line-height: 66rpx;
 }
 
 .category-row {
-  position: fixed;
-  z-index: 3;
-  top: 172rpx;
-  right: 0;
-  left: 0;
+  margin: 26rpx -28rpx 10rpx;
+  padding: 0 28rpx;
   box-sizing: border-box;
-  height: 92rpx;
-  padding: 0 24rpx;
   white-space: nowrap;
-  background: #ffffff;
 }
 
-.category {
+.category-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 124rpx;
-  height: 60rpx;
+  height: 62rpx;
   margin-right: 16rpx;
-  padding: 0 22rpx;
-  border-radius: 22rpx;
-  background: #f4f4f6;
-  color: #6f6f75;
-  font-size: 26rpx;
-  font-weight: 700;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  background: #ffffff;
+  color: #4d4d55;
+  font-size: 25rpx;
+  font-weight: 800;
 }
 
-.category.active {
-  background: #ff4f3f;
-  color: #fff;
-  box-shadow: 0 10rpx 22rpx rgba(255, 79, 63, 0.18);
-}
-
-.dish-list {
-  height: calc(100vh - 392rpx);
-  margin-top: 92rpx;
-  padding: 10rpx 24rpx 24rpx;
+.dish-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
-}
-
-.dish {
-  display: flex;
-  align-items: center;
-  gap: 18rpx;
-  margin-bottom: 22rpx;
-  padding: 20rpx;
-  border: 1rpx solid rgba(17, 17, 17, 0.06);
-  border-radius: 28rpx;
-  background: #fff;
-  box-shadow: 0 16rpx 36rpx rgba(17, 17, 17, 0.06);
-}
-
-.dish-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 112rpx;
-  height: 112rpx;
-  border-radius: 28rpx;
-  background: #fff1ee;
-  color: #ff4f3f;
-  font-size: 44rpx;
-  font-weight: 900;
+  min-height: 112rpx;
+  margin-top: 18rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
 }
 
 .dish-info {
-  flex: 1;
   min-width: 0;
 }
 
 .dish-name {
-  white-space: normal;
-  font-size: 32rpx;
+  color: #111111;
+  font-size: 30rpx;
   font-weight: 900;
-  line-height: 1.3;
 }
 
-.dish-tag,
-.dish-status {
-  margin-top: 8rpx;
-  color: #747474;
+.dish-meta {
+  margin-top: 10rpx;
+  color: #8b8b94;
   font-size: 24rpx;
 }
 
-.dish-status.disabled {
-  color: #ff4f3f;
-}
-
-.add-btn {
-  width: 92rpx;
-  height: 58rpx;
-  padding: 0;
+.status {
+  flex-shrink: 0;
+  height: 46rpx;
+  padding: 0 16rpx;
   border-radius: 999rpx;
-  background: #ff4f3f;
-  color: #fff;
-  font-size: 24rpx;
-  font-weight: 800;
-  line-height: 58rpx;
-  box-shadow: 0 10rpx 22rpx rgba(255, 79, 63, 0.2);
-}
-
-.cart-bar {
-  position: fixed;
-  right: 24rpx;
-  bottom: 154rpx;
-  left: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 96rpx;
-  padding: 0 32rpx;
-  border-radius: 28rpx;
-  background: #171717;
-  color: #fff;
-  font-size: 28rpx;
-  box-shadow: 0 18rpx 42rpx rgba(17, 17, 17, 0.22);
-}
-
-.cart-title {
-  font-size: 28rpx;
-  font-weight: 700;
-}
-
-.cart-sub {
-  margin-top: 4rpx;
-  color: rgba(255, 255, 255, 0.58);
+  background: #eef8f1;
+  color: #2d8b4e;
   font-size: 22rpx;
+  font-weight: 900;
+  line-height: 46rpx;
 }
 
-.cart-total {
-  color: #ffcf49;
-  font-size: 28rpx;
-  font-weight: 700;
+.status.paused {
+  background: #fff2ef;
+  color: #ff5a45;
 }

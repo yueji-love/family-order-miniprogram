@@ -1,37 +1,20 @@
-const { setTabBar } = require('../../utils/tab-bar');
-
 Page({
   data: {
-    categories: ['家常菜', '快手菜', '汤羹', '下午茶'],
-    currentCategory: '家常菜',
+    categories: ['素菜小炒类', '荤菜/炖菜类', '鸡/蛋类', '鱼虾海鲜类', '减脂餐'],
     dishes: [
-      { id: 'demo-1', name: '番茄炒蛋', initial: '番', tag: '酸甜 快手', count: 0, status: '上架' },
-      { id: 'demo-2', name: '青椒肉丝', initial: '青', tag: '下饭 家常', count: 0, status: '上架' },
-      { id: 'demo-3', name: '红烧排骨', initial: '红', tag: '硬菜', count: 0, status: '暂不可做' }
-    ],
-    cartCount: 0
+      { id: 'dish-1', name: '蒜蓉娃娃菜', category: '素菜小炒类', status: '上架', sales: 0 },
+      { id: 'dish-2', name: '蒜蓉茄子', category: '素菜小炒类', status: '上架', sales: 0 },
+      { id: 'dish-3', name: '清炒山药', category: '素菜小炒类', status: '上架', sales: 0 },
+      { id: 'dish-4', name: '红烧排骨', category: '荤菜/炖菜类', status: '暂不可做', sales: 0 },
+      { id: 'dish-5', name: '番茄炒蛋', category: '鸡/蛋类', status: '上架', sales: 0 }
+    ]
   },
 
-  onShow() {
-    setTabBar(this, 1);
+  addRecipe() {
+    wx.showToast({ title: '下一阶段接入新增菜品', icon: 'none' });
   },
 
-  selectCategory(event) {
-    this.setData({ currentCategory: event.currentTarget.dataset.name });
-  },
-
-  addDish(event) {
-    const status = event.currentTarget.dataset.status;
-    if (status !== '上架') {
-      wx.showToast({ title: '这道菜暂不可做', icon: 'none' });
-      return;
-    }
-
-    this.setData({ cartCount: this.data.cartCount + 1 });
-    wx.showToast({ title: '已加入购物车', icon: 'success' });
-  },
-
-  goCart() {
-    wx.navigateTo({ url: '/pages/cart/cart' });
+  editDish() {
+    wx.showToast({ title: '下一阶段接入编辑菜品', icon: 'none' });
   }
 });

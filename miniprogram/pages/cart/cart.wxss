@@ -1,24 +1,50 @@
+.cart-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 32rpx 28rpx 170rpx;
+  background: #f8f8fa;
+}
+
 .cart-hero {
-  padding: 36rpx 28rpx;
-  border-radius: 8rpx;
-  background: #fffefa;
-  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+  box-sizing: border-box;
+  padding: 34rpx 32rpx;
+  border-radius: 30rpx;
+  background: #111111;
+  color: #ffffff;
+}
+
+.hero-kicker {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.hero-title {
+  margin-top: 16rpx;
+  font-size: 46rpx;
+  font-weight: 900;
+}
+
+.hero-desc {
+  margin-top: 16rpx;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 26rpx;
+  line-height: 1.5;
 }
 
 .form-panel {
+  margin-top: 24rpx;
   padding: 8rpx 28rpx;
-  border-radius: 8rpx;
-  background: #fffefa;
-  box-shadow: 0 16rpx 40rpx rgba(63, 78, 68, 0.08);
+  border-radius: 28rpx;
+  background: #ffffff;
 }
 
 .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 116rpx;
-  border-top: 1rpx solid #eef1e9;
-  font-size: 28rpx;
+  min-height: 118rpx;
+  border-top: 1rpx solid #eeeeF2;
 }
 
 .row:first-child {
@@ -26,31 +52,49 @@
 }
 
 .label {
-  color: #687067;
+  color: #85858e;
   font-size: 24rpx;
 }
 
 .value {
   margin-top: 8rpx;
-  color: #20241f;
+  color: #111111;
   font-size: 32rpx;
-  font-weight: 700;
+  font-weight: 900;
+}
+
+.pill {
+  height: 46rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: #f0edf7;
+  color: #8173b4;
+  font-size: 22rpx;
+  font-weight: 900;
+  line-height: 46rpx;
 }
 
 .stepper {
   display: flex;
   align-items: center;
   gap: 18rpx;
+  color: #111111;
+  font-size: 30rpx;
+  font-weight: 900;
 }
 
 .stepper button {
-  width: 56rpx;
-  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58rpx;
+  height: 58rpx;
   padding: 0;
-  border-radius: 8rpx;
-  background: rgba(36, 107, 90, 0.08);
-  color: #246b5a;
-  line-height: 56rpx;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  font-size: 34rpx;
+  line-height: 58rpx;
 }
 
 .submit-area {
@@ -58,4 +102,14 @@
   right: 28rpx;
   bottom: 42rpx;
   left: 28rpx;
+}
+
+.submit-button {
+  height: 94rpx;
+  border-radius: 24rpx;
+  background: #111111;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 900;
+  line-height: 94rpx;
 }
