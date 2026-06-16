@@ -15,7 +15,7 @@
           <view class="tab active">点单</view>
           <view class="tab muted" bindtap="goMenuManage">管理</view>
         </view>
-        <button wx:if="{{role === '主理人'}}" class="add-recipe" bindtap="goMenuManage">添加菜谱</button>
+        <button wx:if="{{role === '主理人'}}" class="add-recipe" bindtap="goMenuManage">加菜谱</button>
         <view class="search-circle" bindtap="openSearch">
           <view class="search-icon"></view>
         </view>
@@ -69,7 +69,7 @@
         <image class="cart-image" src="/assets/icons/cart.png" mode="aspectFit" />
         <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
       </view>
-      <button class="random-btn" bindtap="randomDish">随机选菜</button>
+      <button class="random-btn" bindtap="randomDish">随机</button>
       <view class="cart-summary" bindtap="openCartDrawer">
         <view class="summary-main">已选 {{cartCount}} 道</view>
       </view>
