@@ -81,7 +81,7 @@ button::after {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 14rpx;
+  gap: 12rpx;
   box-sizing: border-box;
   height: 58rpx;
   padding-right: 188rpx;
@@ -142,16 +142,17 @@ button::after {
 
 .add-recipe {
   flex-shrink: 0;
-  width: 132rpx;
-  height: 58rpx;
-  padding: 0;
+  width: auto;
+  min-width: 104rpx;
+  height: 52rpx;
+  padding: 0 18rpx;
   border: 2rpx solid #cfdc8e;
   border-radius: 999rpx;
   background: #ffffff;
   color: #6f8312;
   font-size: 23rpx;
   font-weight: 900;
-  line-height: 54rpx;
+  line-height: 48rpx;
 }
 
 .search-box {
@@ -444,8 +445,9 @@ button::after {
 .random-btn {
   flex-shrink: 0;
   height: 58rpx;
-  width: 112rpx;
-  padding: 0;
+  width: auto;
+  min-width: 96rpx;
+  padding: 0 18rpx;
   border: 2rpx solid #dce7a5;
   border-radius: 999rpx;
   background: #ffffff;
