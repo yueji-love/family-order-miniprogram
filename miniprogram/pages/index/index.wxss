@@ -67,10 +67,10 @@ button::after {
   z-index: 10;
   display: flex;
   align-items: flex-end;
-  gap: 12rpx;
+  gap: 10rpx;
   box-sizing: border-box;
   height: 152rpx;
-  padding: 88rpx 18rpx 12rpx;
+  padding: 88rpx 190rpx 12rpx 18rpx;
   border-bottom: 1rpx solid #f1e8d7;
   background: rgba(255, 253, 246, 0.98);
 }
@@ -78,14 +78,15 @@ button::after {
 .tabs {
   display: flex;
   align-items: center;
-  gap: 22rpx;
+  flex-shrink: 0;
+  gap: 20rpx;
   height: 70rpx;
 }
 
 .tab {
   position: relative;
   color: #2d261f;
-  font-size: 32rpx;
+  font-size: 31rpx;
   font-weight: 900;
   line-height: 70rpx;
 }
@@ -108,7 +109,7 @@ button::after {
 
 .add-recipe {
   flex-shrink: 0;
-  width: 138rpx;
+  width: 168rpx;
   height: 60rpx;
   padding: 0;
   border: 2rpx solid #f5bd73;
@@ -122,9 +123,10 @@ button::after {
 
 .search-box {
   display: flex;
-  flex: 1;
+  flex: none;
   align-items: center;
-  min-width: 0;
+  width: 138rpx;
+  min-width: 138rpx;
   height: 60rpx;
   box-sizing: border-box;
   padding: 0 14rpx;
@@ -332,16 +334,16 @@ button::after {
 
 .mini-cart {
   position: fixed;
-  right: 22rpx;
+  right: 24rpx;
   bottom: 136rpx;
-  left: 22rpx;
+  left: 24rpx;
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 12rpx;
+  gap: 16rpx;
   height: 78rpx;
   box-sizing: border-box;
-  padding: 10rpx 12rpx;
+  padding: 10rpx 14rpx;
   border: 1rpx solid rgba(255, 159, 73, 0.18);
   border-radius: 999rpx;
   background: rgba(255, 255, 255, 0.98);
@@ -354,68 +356,16 @@ button::after {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 58rpx;
-  height: 58rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius: 50%;
-  background: #fff2d5;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 2rpx #ffe2b8;
 }
 
-.cart-glyph {
-  position: relative;
+.cart-image {
   width: 42rpx;
-  height: 38rpx;
-}
-
-.cart-glyph::before {
-  position: absolute;
-  top: 2rpx;
-  left: 1rpx;
-  width: 12rpx;
-  height: 16rpx;
-  border-top: 4rpx solid #d2742f;
-  border-left: 4rpx solid #d2742f;
-  border-radius: 3rpx 0 0 0;
-  transform: rotate(-8deg);
-  content: "";
-}
-
-.cart-basket {
-  position: absolute;
-  top: 13rpx;
-  left: 10rpx;
-  width: 27rpx;
-  height: 14rpx;
-  border: 4rpx solid #d2742f;
-  border-radius: 4rpx;
-  transform: skewX(-9deg);
-}
-
-.cart-basket::before {
-  position: absolute;
-  top: -9rpx;
-  left: 2rpx;
-  width: 29rpx;
-  height: 4rpx;
-  border-radius: 999rpx;
-  background: #d2742f;
-  content: "";
-}
-
-.cart-wheel {
-  position: absolute;
-  bottom: 1rpx;
-  width: 7rpx;
-  height: 7rpx;
-  border-radius: 50%;
-  background: #d2742f;
-}
-
-.cart-wheel.left {
-  left: 15rpx;
-}
-
-.cart-wheel.right {
-  right: 4rpx;
+  height: 42rpx;
 }
 
 .cart-badge {
@@ -438,7 +388,7 @@ button::after {
 .random-btn,
 .order-btn {
   height: 52rpx;
-  padding: 0 22rpx;
+  padding: 0 24rpx;
   border-radius: 999rpx;
   font-size: 24rpx;
   font-weight: 900;
@@ -446,7 +396,8 @@ button::after {
 }
 
 .random-btn {
-  width: 156rpx;
+  width: auto;
+  min-width: 170rpx;
   border: 2rpx solid #ffd59c;
   background: #ffffff;
   color: #d2742f;
@@ -457,7 +408,8 @@ button::after {
 }
 
 .order-btn {
-  width: 104rpx;
+  width: auto;
+  min-width: 112rpx;
   background: #ff8a3d;
   color: #ffffff;
 }

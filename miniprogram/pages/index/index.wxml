@@ -57,11 +57,7 @@
 
     <view class="mini-cart">
       <view class="cart-icon" bindtap="openCartDrawer">
-        <view class="cart-glyph">
-          <view class="cart-basket"></view>
-          <view class="cart-wheel left"></view>
-          <view class="cart-wheel right"></view>
-        </view>
+        <image class="cart-image" src="/assets/icons/cart.svg" mode="aspectFit" />
         <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
       </view>
       <button class="random-btn" bindtap="randomDish">随机选菜</button>
