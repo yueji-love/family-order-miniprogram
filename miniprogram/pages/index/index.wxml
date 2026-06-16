@@ -12,14 +12,14 @@
     <view class="topbar">
       <view class="tabs">
         <view class="tab active">点单</view>
-        <view class="tab muted" bindtap="goProfile">管理</view>
+        <view class="tab muted" bindtap="goMenuManage">管理</view>
       </view>
       <button wx:if="{{role === '主理人'}}" class="add-recipe" bindtap="goMenuManage">添加菜谱</button>
       <view class="search-box">
         <text class="search-icon">搜</text>
         <input
           value="{{searchKeyword}}"
-          placeholder="搜索全部菜品"
+          placeholder="搜索"
           confirm-type="search"
           bindinput="onSearchInput"
         />
@@ -57,11 +57,16 @@
 
     <view class="mini-cart">
       <view class="cart-icon" bindtap="openCartDrawer">
-        <text>车</text>
+        <view class="cart-glyph">
+          <view class="cart-basket"></view>
+          <view class="cart-wheel left"></view>
+          <view class="cart-wheel right"></view>
+        </view>
         <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
       </view>
       <button class="random-btn" bindtap="randomDish">随机选菜</button>
-      <button class="view-cart-btn" bindtap="openCartDrawer">查看已选</button>
+      <view class="cart-spacer"></view>
+      <button class="order-btn {{cartCount === 0 ? 'disabled' : ''}}" bindtap="goCart">下单</button>
     </view>
 
     <view wx:if="{{cartDrawerVisible}}" class="drawer-mask" bindtap="closeCartDrawer"></view>

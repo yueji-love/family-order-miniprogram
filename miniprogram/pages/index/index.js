@@ -36,8 +36,6 @@ Page({
     user: null,
     hasFamily: true,
     role: '主理人',
-    roleId: 'CHEF-1001',
-    familyName: '测试家庭',
     categories,
     currentCategory: categories[0],
     dishes,
@@ -187,9 +185,5 @@ Page({
 
   goMenuManage() {
     wx.navigateTo({ url: '/pages/menu/menu' });
-  },
-
-  goProfile() {
-    wx.switchTab({ url: '/pages/profile/profile' });
   }
 });
