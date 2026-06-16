@@ -17,18 +17,18 @@ const categories = [
 ];
 
 const dishes = [
-  { id: 'dish-1', category: '素菜小炒类', name: '蒜蓉娃娃菜', sales: 0, color: '#f6d59b', thumb: '娃', selected: 0 },
-  { id: 'dish-2', category: '素菜小炒类', name: '蒜蓉茄子', sales: 0, color: '#8b64be', thumb: '茄', selected: 0 },
-  { id: 'dish-3', category: '素菜小炒类', name: '清炒山药', sales: 0, color: '#f1e8d7', thumb: '山', selected: 0 },
-  { id: 'dish-4', category: '素菜小炒类', name: '清炒黄瓜', sales: 0, color: '#9bdc92', thumb: '瓜', selected: 0 },
-  { id: 'dish-5', category: '素菜小炒类', name: '清炒紫甘蓝', sales: 0, color: '#9a5cc8', thumb: '紫', selected: 0 },
-  { id: 'dish-6', category: '素菜小炒类', name: '清炒胡萝卜', sales: 0, color: '#f48643', thumb: '胡', selected: 0 },
-  { id: 'dish-7', category: '荤菜/炖菜类', name: '红烧排骨', sales: 0, color: '#9b4637', thumb: '排', selected: 0 },
-  { id: 'dish-8', category: '荤菜/炖菜类', name: '番茄牛腩', sales: 0, color: '#e75b44', thumb: '牛', selected: 0 },
-  { id: 'dish-9', category: '鸡/蛋类', name: '番茄炒蛋', sales: 0, color: '#f5b13c', thumb: '蛋', selected: 0 },
-  { id: 'dish-10', category: '鱼虾海鲜类', name: '清蒸鲈鱼', sales: 0, color: '#7db3d8', thumb: '鱼', selected: 0 },
-  { id: 'dish-11', category: '热饮类', name: '牛奶+包子', sales: 0, color: '#eadfc8', thumb: '奶', selected: 0 },
-  { id: 'dish-12', category: '减脂餐', name: '鸡胸肉沙拉', sales: 0, color: '#7ebd81', thumb: '轻', selected: 0 }
+  { id: 'dish-1', category: '素菜小炒类', name: '蒜蓉娃娃菜', sales: 0, color: '#ffd47d', thumb: '娃', selected: 0 },
+  { id: 'dish-2', category: '素菜小炒类', name: '蒜蓉茄子', sales: 0, color: '#b98cff', thumb: '茄', selected: 0 },
+  { id: 'dish-3', category: '素菜小炒类', name: '清炒山药', sales: 0, color: '#e9ddc7', thumb: '山', selected: 0 },
+  { id: 'dish-4', category: '素菜小炒类', name: '清炒黄瓜', sales: 0, color: '#8fe08a', thumb: '瓜', selected: 0 },
+  { id: 'dish-5', category: '素菜小炒类', name: '清炒紫甘蓝', sales: 0, color: '#b66bea', thumb: '紫', selected: 0 },
+  { id: 'dish-6', category: '素菜小炒类', name: '清炒胡萝卜', sales: 0, color: '#ff9a55', thumb: '胡', selected: 0 },
+  { id: 'dish-7', category: '荤菜/炖菜类', name: '红烧排骨', sales: 0, color: '#d96d50', thumb: '排', selected: 0 },
+  { id: 'dish-8', category: '荤菜/炖菜类', name: '番茄牛腩', sales: 0, color: '#ff705c', thumb: '牛', selected: 0 },
+  { id: 'dish-9', category: '鸡/蛋类', name: '番茄炒蛋', sales: 0, color: '#ffc24a', thumb: '蛋', selected: 0 },
+  { id: 'dish-10', category: '鱼虾海鲜类', name: '清蒸鲈鱼', sales: 0, color: '#79c7ef', thumb: '鱼', selected: 0 },
+  { id: 'dish-11', category: '热饮类', name: '牛奶+包子', sales: 0, color: '#f1dfba', thumb: '奶', selected: 0 },
+  { id: 'dish-12', category: '减脂餐', name: '鸡胸肉沙拉', sales: 0, color: '#77d99a', thumb: '轻', selected: 0 }
 ];
 
 Page({
@@ -37,6 +37,9 @@ Page({
     user: null,
     hasFamily: true,
     role: '主理人',
+    roleId: 'CHEF-1001',
+    memberId: 'MEM-2048',
+    familyId: 'HOME-0616',
     familyName: '测试家庭',
     defaultMeal: null,
     categories,
@@ -45,8 +48,11 @@ Page({
     visibleDishes: [],
     cartCount: 0,
     cartItems: [],
+    cartPreview: '还没选菜',
     submitText: '下单',
-    searchKeyword: ''
+    searchKeyword: '',
+    isSearching: false,
+    listTitle: `${categories[0]}(6)`
   },
 
   onLoad() {
@@ -82,17 +88,36 @@ Page({
   refreshVisibleDishes() {
     const { dishes: allDishes, currentCategory, searchKeyword } = this.data;
     const keyword = searchKeyword.trim();
+    const isSearching = keyword.length > 0;
     const visibleDishes = allDishes.filter((dish) => {
-      const matchCategory = dish.category === currentCategory;
-      const matchKeyword = !keyword || dish.name.indexOf(keyword) >= 0;
-      return matchCategory && matchKeyword;
+      if (isSearching) {
+        return dish.name.indexOf(keyword) >= 0 || dish.category.indexOf(keyword) >= 0;
+      }
+      return dish.category === currentCategory;
     });
+    const listTitle = isSearching ? `搜索结果(${visibleDishes.length})` : `${currentCategory}(${visibleDishes.length})`;
 
-    this.setData({ visibleDishes });
+    this.setData({ visibleDishes, isSearching, listTitle });
+  },
+
+  refreshCart(dishesNext) {
+    const cartItems = dishesNext.filter((dish) => dish.selected > 0);
+    const cartCount = cartItems.reduce((sum, dish) => sum + dish.selected, 0);
+    const cartPreview = cartItems.length
+      ? cartItems.slice(0, 2).map((dish) => `${dish.name}x${dish.selected}`).join('、')
+      : '还没选菜';
+    const submitText = cartCount === 0 ? '下单' : `下单 ${cartCount}`;
+
+    this.setData({ dishes: dishesNext, cartItems, cartCount, cartPreview, submitText }, () => {
+      this.refreshVisibleDishes();
+    });
   },
 
   selectCategory(event) {
-    this.setData({ currentCategory: event.currentTarget.dataset.name }, () => {
+    this.setData({
+      currentCategory: event.currentTarget.dataset.name,
+      searchKeyword: ''
+    }, () => {
       this.refreshVisibleDishes();
     });
   },
@@ -103,23 +128,28 @@ Page({
     });
   },
 
+  clearSearch() {
+    this.setData({ searchKeyword: '' }, () => {
+      this.refreshVisibleDishes();
+    });
+  },
+
   addDish(event) {
     const id = event.currentTarget.dataset.id;
     const dishesNext = this.data.dishes.map((dish) => {
       if (dish.id !== id) return dish;
       return { ...dish, selected: dish.selected + 1 };
     });
-    const cartItems = dishesNext.filter((dish) => dish.selected > 0);
-    const cartCount = cartItems.reduce((sum, dish) => sum + dish.selected, 0);
-    const submitText = cartCount === 0 ? '下单' : `下单 ${cartCount}`;
 
-    this.setData({ dishes: dishesNext, cartItems, cartCount, submitText }, () => {
-      this.refreshVisibleDishes();
-    });
+    this.refreshCart(dishesNext);
   },
 
   randomDish() {
-    const list = this.data.visibleDishes.length ? this.data.visibleDishes : this.data.dishes;
+    const list = this.data.isSearching ? this.data.visibleDishes : this.data.dishes;
+    if (!list.length) {
+      wx.showToast({ title: '没有可随机的菜', icon: 'none' });
+      return;
+    }
     const dish = list[Math.floor(Math.random() * list.length)];
     wx.showModal({
       title: '随机选菜',
@@ -132,6 +162,11 @@ Page({
         }
       }
     });
+  },
+
+  copyId(event) {
+    const value = event.currentTarget.dataset.value;
+    wx.setClipboardData({ data: value });
   },
 
   goCart() {

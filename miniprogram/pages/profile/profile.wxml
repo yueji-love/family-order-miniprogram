@@ -5,6 +5,21 @@
     <view class="profile-role">当前身份：{{roleName}}</view>
   </view>
 
+  <view class="id-grid">
+    <view class="id-card" data-value="{{familyId}}" bindtap="copyId">
+      <view class="id-label">家庭 ID</view>
+      <view class="id-value">{{familyId}}</view>
+    </view>
+    <view class="id-card" data-value="{{roleId}}" bindtap="copyId">
+      <view class="id-label">主理人 ID</view>
+      <view class="id-value">{{roleId}}</view>
+    </view>
+    <view class="id-card" data-value="{{memberId}}" bindtap="copyId">
+      <view class="id-label">我的成员 ID</view>
+      <view class="id-value">{{memberId}}</view>
+    </view>
+  </view>
+
   <view class="section-title">主理人管理</view>
   <view class="manager-list">
     <view

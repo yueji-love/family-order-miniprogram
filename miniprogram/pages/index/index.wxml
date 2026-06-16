@@ -16,13 +16,14 @@
       </view>
       <button wx:if="{{role === '主理人'}}" class="add-recipe" bindtap="goMenuManage">添加菜谱</button>
       <view class="search-box">
-        <text class="search-icon">⌕</text>
+        <text class="search-icon">搜</text>
         <input
           value="{{searchKeyword}}"
-          placeholder="搜索"
+          placeholder="搜索全部菜品"
           confirm-type="search"
           bindinput="onSearchInput"
         />
+        <text wx:if="{{searchKeyword}}" class="clear-search" bindtap="clearSearch">×</text>
       </view>
     </view>
 
@@ -31,7 +32,10 @@
         <view class="family-name">{{familyName}}</view>
         <view class="meal-name">{{defaultMeal.mealDate}} {{defaultMeal.mealTypeName}}</view>
       </view>
-      <view class="role-pill">{{role}}</view>
+      <view class="id-stack">
+        <view class="role-pill">{{role}}</view>
+        <view class="id-pill" data-value="{{roleId}}" bindtap="copyId">ID {{roleId}}</view>
+      </view>
     </view>
 
     <view class="content">
@@ -39,14 +43,14 @@
         <view
           wx:for="{{categories}}"
           wx:key="*this"
-          class="category-item {{currentCategory === item ? 'active' : ''}}"
+          class="category-item {{!isSearching && currentCategory === item ? 'active' : ''}}"
           data-name="{{item}}"
           bindtap="selectCategory"
         >{{item}}</view>
       </scroll-view>
 
       <scroll-view class="dish-list" scroll-y>
-        <view class="category-title">{{currentCategory}}({{visibleDishes.length}})</view>
+        <view class="category-title">{{listTitle}}</view>
         <view class="dish-row" wx:for="{{visibleDishes}}" wx:key="id">
           <view class="dish-thumb" style="background: {{item.color}};">
             <text>{{item.thumb}}</text>
@@ -64,8 +68,11 @@
 
     <view class="floating-cart">
       <view class="cart-icon">车</view>
+      <view class="cart-preview" bindtap="goCart">
+        <view class="cart-title">购物车 {{cartCount}} 道</view>
+        <view class="cart-dishes">{{cartPreview}}</view>
+      </view>
       <button class="random-btn" bindtap="randomDish">随机选菜</button>
-      <button class="invite-btn" bindtap="goFamily">邀请下单</button>
       <button class="submit-btn {{cartCount === 0 ? 'disabled' : ''}}" bindtap="goCart">{{submitText}}</button>
     </view>
   </view>

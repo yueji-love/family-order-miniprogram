@@ -5,6 +5,17 @@
     <view class="hero-desc">{{roleHint}}</view>
   </view>
 
+  <view class="id-row">
+    <view class="id-card" data-value="{{familyId}}" bindtap="copyId">
+      <view class="id-label">家庭 ID</view>
+      <view class="id-value">{{familyId}}</view>
+    </view>
+    <view class="id-card" data-value="{{chefId}}" bindtap="copyId">
+      <view class="id-label">主理人 ID</view>
+      <view class="id-value">{{chefId}}</view>
+    </view>
+  </view>
+
   <view class="family-panel">
     <view class="field-label">创建家庭</view>
     <input value="{{familyName}}" bindinput="onFamilyNameInput" placeholder="输入家庭名称" />
@@ -13,7 +24,11 @@
 
   <view class="family-panel">
     <view class="field-label">加入家庭</view>
-    <input value="{{inviteCode}}" bindinput="onInviteCodeInput" placeholder="输入邀请码" />
+    <input value="{{inviteCode}}" bindinput="onInviteCodeInput" placeholder="输入家庭 ID / 邀请码 / 主理人 ID" />
     <button class="secondary-button" bindtap="joinFamily">我是成员，加入家庭</button>
+  </view>
+
+  <view class="member-id" data-value="{{memberId}}" bindtap="copyId">
+    我的成员 ID：{{memberId}}
   </view>
 </view>
