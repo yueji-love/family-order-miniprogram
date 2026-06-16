@@ -16,7 +16,7 @@
       </view>
       <button wx:if="{{role === '主理人'}}" class="add-recipe" bindtap="goMenuManage">添加菜谱</button>
       <view class="search-box">
-        <text class="search-icon">搜</text>
+        <view class="search-icon"></view>
         <input
           value="{{searchKeyword}}"
           placeholder="搜索"

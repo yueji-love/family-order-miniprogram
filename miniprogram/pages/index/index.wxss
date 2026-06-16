@@ -66,11 +66,11 @@ button::after {
   top: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 12rpx;
   box-sizing: border-box;
-  height: 110rpx;
-  padding: 18rpx 20rpx;
+  height: 152rpx;
+  padding: 88rpx 18rpx 12rpx;
   border-bottom: 1rpx solid #f1e8d7;
   background: rgba(255, 253, 246, 0.98);
 }
@@ -133,10 +133,26 @@ button::after {
 }
 
 .search-icon {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 22rpx;
+  height: 22rpx;
   margin-right: 6rpx;
-  color: #d2742f;
-  font-size: 22rpx;
-  font-weight: 900;
+  border: 4rpx solid #d2742f;
+  border-radius: 50%;
+}
+
+.search-icon::after {
+  position: absolute;
+  right: -9rpx;
+  bottom: -7rpx;
+  width: 12rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+  background: #d2742f;
+  transform: rotate(45deg);
+  content: "";
 }
 
 .search-box input {
@@ -156,7 +172,7 @@ button::after {
 
 .content {
   display: flex;
-  height: calc(100vh - 110rpx);
+  height: calc(100vh - 152rpx);
   min-height: 760rpx;
 }
 
@@ -346,49 +362,60 @@ button::after {
 
 .cart-glyph {
   position: relative;
-  width: 36rpx;
-  height: 34rpx;
+  width: 42rpx;
+  height: 38rpx;
 }
 
 .cart-glyph::before {
   position: absolute;
-  top: 1rpx;
-  left: 0;
-  width: 9rpx;
-  height: 18rpx;
+  top: 2rpx;
+  left: 1rpx;
+  width: 12rpx;
+  height: 16rpx;
   border-top: 4rpx solid #d2742f;
   border-left: 4rpx solid #d2742f;
-  transform: rotate(-12deg);
+  border-radius: 3rpx 0 0 0;
+  transform: rotate(-8deg);
   content: "";
 }
 
 .cart-basket {
   position: absolute;
-  top: 10rpx;
-  left: 8rpx;
-  width: 25rpx;
-  height: 15rpx;
+  top: 13rpx;
+  left: 10rpx;
+  width: 27rpx;
+  height: 14rpx;
   border: 4rpx solid #d2742f;
-  border-top: 0;
-  border-radius: 0 0 4rpx 4rpx;
-  transform: skewX(-8deg);
+  border-radius: 4rpx;
+  transform: skewX(-9deg);
+}
+
+.cart-basket::before {
+  position: absolute;
+  top: -9rpx;
+  left: 2rpx;
+  width: 29rpx;
+  height: 4rpx;
+  border-radius: 999rpx;
+  background: #d2742f;
+  content: "";
 }
 
 .cart-wheel {
   position: absolute;
-  bottom: 0;
-  width: 6rpx;
-  height: 6rpx;
+  bottom: 1rpx;
+  width: 7rpx;
+  height: 7rpx;
   border-radius: 50%;
   background: #d2742f;
 }
 
 .cart-wheel.left {
-  left: 12rpx;
+  left: 15rpx;
 }
 
 .cart-wheel.right {
-  right: 2rpx;
+  right: 4rpx;
 }
 
 .cart-badge {
@@ -410,16 +437,16 @@ button::after {
 
 .random-btn,
 .order-btn {
-  height: 56rpx;
-  padding: 0 24rpx;
+  height: 52rpx;
+  padding: 0 22rpx;
   border-radius: 999rpx;
   font-size: 24rpx;
   font-weight: 900;
-  line-height: 56rpx;
+  line-height: 52rpx;
 }
 
 .random-btn {
-  width: 190rpx;
+  width: 156rpx;
   border: 2rpx solid #ffd59c;
   background: #ffffff;
   color: #d2742f;
@@ -430,7 +457,7 @@ button::after {
 }
 
 .order-btn {
-  width: 126rpx;
+  width: 104rpx;
   background: #ff8a3d;
   color: #ffffff;
 }
@@ -457,7 +484,7 @@ button::after {
   left: 0;
   z-index: 61;
   box-sizing: border-box;
-  max-height: 62vh;
+  max-height: 80vh;
   padding: 14rpx 28rpx 38rpx;
   border-radius: 34rpx 34rpx 0 0;
   background: #ffffff;
@@ -516,7 +543,7 @@ button::after {
 }
 
 .drawer-list {
-  max-height: 320rpx;
+  max-height: 520rpx;
   overflow: hidden;
 }
 
@@ -570,8 +597,9 @@ button::after {
 }
 
 .confirm-cart {
+  width: 330rpx;
   height: 88rpx;
-  margin-top: 24rpx;
+  margin: 24rpx auto 0;
   border-radius: 24rpx;
   background: #ff8a3d;
   color: #ffffff;
