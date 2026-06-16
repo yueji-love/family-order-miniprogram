@@ -55,13 +55,16 @@
       </scroll-view>
     </view>
 
-    <view class="mini-cart">
+    <view class="settle-bar">
       <view class="cart-icon" bindtap="openCartDrawer">
         <image class="cart-image" src="/assets/icons/cart.svg" mode="aspectFit" />
         <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
       </view>
       <button class="random-btn" bindtap="randomDish">随机选菜</button>
-      <view class="cart-spacer"></view>
+      <view class="cart-summary" bindtap="openCartDrawer">
+        <view class="summary-main">已选 {{cartCount}} 道</view>
+        <view class="summary-sub">点购物车查看</view>
+      </view>
       <button class="order-btn {{cartCount === 0 ? 'disabled' : ''}}" bindtap="goCart">下单</button>
     </view>
 

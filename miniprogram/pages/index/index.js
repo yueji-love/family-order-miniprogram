@@ -16,18 +16,18 @@ const categories = [
 ];
 
 const dishes = [
-  { id: 'dish-1', category: '素菜小炒类', name: '蒜蓉娃娃菜', sales: 0, color: '#ffd47d', thumb: '娃', selected: 0 },
-  { id: 'dish-2', category: '素菜小炒类', name: '蒜蓉茄子', sales: 0, color: '#b98cff', thumb: '茄', selected: 0 },
-  { id: 'dish-3', category: '素菜小炒类', name: '清炒山药', sales: 0, color: '#e9ddc7', thumb: '山', selected: 0 },
-  { id: 'dish-4', category: '素菜小炒类', name: '清炒黄瓜', sales: 0, color: '#8fe08a', thumb: '瓜', selected: 0 },
-  { id: 'dish-5', category: '素菜小炒类', name: '清炒紫甘蓝', sales: 0, color: '#b66bea', thumb: '紫', selected: 0 },
-  { id: 'dish-6', category: '素菜小炒类', name: '清炒胡萝卜', sales: 0, color: '#ff9a55', thumb: '胡', selected: 0 },
-  { id: 'dish-7', category: '荤菜/炖菜类', name: '红烧排骨', sales: 0, color: '#d96d50', thumb: '排', selected: 0 },
-  { id: 'dish-8', category: '荤菜/炖菜类', name: '番茄牛腩', sales: 0, color: '#ff705c', thumb: '牛', selected: 0 },
-  { id: 'dish-9', category: '鸡/蛋类', name: '番茄炒蛋', sales: 0, color: '#ffc24a', thumb: '蛋', selected: 0 },
-  { id: 'dish-10', category: '鱼虾海鲜类', name: '清蒸鲈鱼', sales: 0, color: '#79c7ef', thumb: '鱼', selected: 0 },
-  { id: 'dish-11', category: '热饮类', name: '牛奶+包子', sales: 0, color: '#f1dfba', thumb: '奶', selected: 0 },
-  { id: 'dish-12', category: '减脂餐', name: '鸡胸肉沙拉', sales: 0, color: '#77d99a', thumb: '轻', selected: 0 }
+  { id: 'dish-1', category: '素菜小炒类', name: '蒜蓉娃娃菜', sales: 0, color: '#dfeaa0', thumb: '娃', selected: 0 },
+  { id: 'dish-2', category: '素菜小炒类', name: '蒜蓉茄子', sales: 0, color: '#c8b4f4', thumb: '茄', selected: 0 },
+  { id: 'dish-3', category: '素菜小炒类', name: '清炒山药', sales: 0, color: '#e8dfcd', thumb: '山', selected: 0 },
+  { id: 'dish-4', category: '素菜小炒类', name: '清炒黄瓜', sales: 0, color: '#b9e6a8', thumb: '瓜', selected: 0 },
+  { id: 'dish-5', category: '素菜小炒类', name: '清炒紫甘蓝', sales: 0, color: '#bc91e5', thumb: '紫', selected: 0 },
+  { id: 'dish-6', category: '素菜小炒类', name: '清炒胡萝卜', sales: 0, color: '#f2b377', thumb: '胡', selected: 0 },
+  { id: 'dish-7', category: '荤菜/炖菜类', name: '红烧排骨', sales: 0, color: '#df7e62', thumb: '排', selected: 0 },
+  { id: 'dish-8', category: '荤菜/炖菜类', name: '番茄牛腩', sales: 0, color: '#f07a65', thumb: '牛', selected: 0 },
+  { id: 'dish-9', category: '鸡/蛋类', name: '番茄炒蛋', sales: 0, color: '#f1c95e', thumb: '蛋', selected: 0 },
+  { id: 'dish-10', category: '鱼虾海鲜类', name: '清蒸鲈鱼', sales: 0, color: '#9bcfeb', thumb: '鱼', selected: 0 },
+  { id: 'dish-11', category: '热饮类', name: '牛奶+包子', sales: 0, color: '#ebdfc4', thumb: '奶', selected: 0 },
+  { id: 'dish-12', category: '减脂餐', name: '鸡胸肉沙拉', sales: 0, color: '#a7daa4', thumb: '轻', selected: 0 }
 ];
 
 Page({
