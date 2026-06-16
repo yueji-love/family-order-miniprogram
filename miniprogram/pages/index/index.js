@@ -122,6 +122,10 @@ Page({
     });
   },
 
+  openSearch() {
+    this.setData({ searchKeyword: this.data.searchKeyword });
+  },
+
   addDish(event) {
     const id = event.currentTarget.dataset.id;
     const dishesNext = this.data.dishes.map((dish) => {
