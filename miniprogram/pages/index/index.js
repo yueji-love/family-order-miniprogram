@@ -44,6 +44,7 @@ Page({
     cartItems: [],
     searchKeyword: '',
     isSearching: false,
+    searchActive: false,
     cartDrawerVisible: false,
     listTitle: `${categories[0]}(6)`
   },
@@ -123,7 +124,13 @@ Page({
   },
 
   openSearch() {
-    this.setData({ searchKeyword: this.data.searchKeyword });
+    this.setData({ searchActive: true });
+  },
+
+  closeSearch() {
+    this.setData({ searchActive: false, searchKeyword: '' }, () => {
+      this.refreshVisibleDishes();
+    });
   },
 
   addDish(event) {
